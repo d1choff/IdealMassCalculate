@@ -25,19 +25,31 @@ namespace IdealMassCalculate
             InitializeComponent();
         }
 
-
         double DevineMethod(double height, string gender)
         {
             double answer = 0.0;
-
             switch (gender)
             {
                 case "Мужской":
-                    answer = 50 + 2.3 * (0.394 * height - 60);
+                    if (height > 100)
+                    {
+                        answer = 50 + 2.3 * (0.394 * height - 60);
+                    }
+                    else { 
+                    MessageBox.Show("Рост должен быть большее 100 см!");
+                    }
                     break;
 
                 case "Женский":
-                    answer = 45.5 + 2.3 * (0.394 * height - 60);
+                    if (height > 100)
+                    {
+                        answer = 45.5 + 2.3 * (0.394 * height - 60);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Рост должен быть большее 100 см!");
+                    }
+                    
                     break;
 
                 default:
@@ -57,11 +69,25 @@ namespace IdealMassCalculate
             switch (gender)
             {
                 case "Мужской":
-                    answer = 52 + 1.9 * (0.394 * height - 60);
+                    if (height > 100)
+                    {
+                        answer = 52 + 1.9 * (0.394 * height - 60);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Рост должен быть большее 100 см!");
+                    }
                     break;
 
                 case "Женский":
+                    if (height > 100)
+                    { 
                     answer = 49 + 1.7 * (0.394 * height - 60);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Рост должен быть большее 100 см!");
+                    }
                     break;
 
                 default:
@@ -104,4 +130,4 @@ namespace IdealMassCalculate
             }
         }
     }
-}
+    }
